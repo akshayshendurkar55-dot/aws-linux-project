@@ -1,0 +1,8 @@
+ping google.com
+ifconfig
+netstat -tuln
+ssh user@ip
+ls
+pwd
+cd
+mkdir test
