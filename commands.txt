@@ -6,3 +6,7 @@ ls
 pwd
 cd
 mkdir test
+top
+df -h
+free -m
+uname -a
