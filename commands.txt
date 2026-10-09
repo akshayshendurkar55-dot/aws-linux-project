@@ -1,12 +1,71 @@
-ping google.com
-ifconfig
-netstat -tuln
-ssh user@ip
-ls
-pwd
-cd
-mkdir test
-top
-df -h
-free -m
-uname -a
+# AWS Linux Project — Command Reference
+
+## 1. Basic Linux Navigation
+
+```bash
+pwd                 # Show current directory
+ls                  # List files and directories
+ls -la              # Show all files, including hidden files
+cd /path/to/folder  # Change directory
+mkdir test          # Create a directory
+touch test.txt      # Create an empty file
+cat test.txt        # Display file contents
+cp test.txt copy.txt # Copy a file
+mv copy.txt new.txt # Rename or move a file
+rm test.txt         # Delete a file
+```
+
+## 2. System Information and Monitoring
+
+```bash
+uname -a            # Display system information
+top                 # Monitor running processes
+free -m             # Display memory usage in MB
+df -h               # Display disk space in readable format
+uptime              # Show uptime and system load
+ps aux              # List running processes
+```
+
+## 3. Networking Commands
+
+```bash
+ping google.com     # Test connectivity to a hostname
+ip addr             # Display network interfaces and IP addresses
+ip route            # Display routing information
+ss -tuln            # Show listening TCP/UDP sockets
+curl -I https://google.com  # Check HTTP response headers
+```
+
+Note: `ifconfig` and `netstat` may require the `net-tools` package. `ip addr` and `ss` are common modern alternatives.
+
+## 4. SSH — Remote Server Access
+
+```bash
+ssh username@server-ip
+```
+
+Replace `username` and `server-ip` with the actual Linux username and server IP address.
+
+For an AWS EC2 instance using a downloaded private key:
+
+```bash
+ssh -i /path/to/key.pem ubuntu@YOUR_EC2_PUBLIC_IP
+```
+
+Use the correct username for the selected EC2 AMI. Keep private keys secure and never upload them to GitHub.
+
+## 5. Useful File and Permission Commands
+
+```bash
+whoami              # Show current user
+id                  # Show user and group IDs
+chmod 600 file.txt  # Set restrictive file permissions
+sudo command        # Run an authorized command with elevated privileges
+```
+
+## Practice Notes
+
+* Run commands in a Linux terminal or an authorized Linux server.
+* Understand what a command does before using it.
+* Avoid running destructive commands on important files or production servers.
+* AWS EC2 usage may incur charges; check billing and stop or delete resources when appropriate.
